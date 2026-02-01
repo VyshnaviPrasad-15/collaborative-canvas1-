@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const path = require("path");
 const { Server } = require("socket.io");
 const { strokes, addSeg } = require("./drawing-state");
 
@@ -7,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
 
-app.use(express.static("client"));
+app.use(express.static(path.join(__dirname, "../client")));
 
 io.on("connection", (socket) => {
   socket.emit("init", strokes);
