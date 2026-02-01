@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#toolbar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 10;
+}
+
+#cursor {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+canvas {
+  display: block;
+}
